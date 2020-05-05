@@ -6,7 +6,19 @@ import numpy as np
 from math import atan2, cos, sin, pi
 from collections import namedtuple
 
-
+def smallest_angle_relative_to_cardinal_direction(unit_vector_angle, in_Rad=True):
+    # Calculates the smallest angle from the normal vector of any bounding box side to a cardinal direction (ie y, x, -y ,-x)
+    if in_Rad:
+        divisor = np.pi/2
+    else:
+        divisor = 90
+    angle_1 = np.mod(unit_vector_angle, divisor)
+    angle_2 = np.mod(unit_vector_angle, -divisor)
+    if abs(angle_1) < abs(angle_2):
+        return angle_1
+    return angle_2                  
+            
+    
 def unit_vector(pt0, pt1):
     # returns a unit vector that points in the direction of pt0 to pt1
     dis_0_to_1 = sqrt((pt0[0] - pt1[0])**2 + (pt0[1] - pt1[1])**2)
