@@ -3,7 +3,7 @@ Finds the minimum bounding box from a point cloud.
 
 [![Build Status](https://travis-ci.org/BebeSparkelSparkel/MinimumBoundingBox.svg?branch=master)](https://travis-ci.org/BebeSparkelSparkel/MinimumBoundingBox)
 
-![](https://github.com/BebeSparkelSparkel/MinimumBoundingBox/blob/master/visual.png?raw=true)
+![](https://github.com/BraunMichael/MinimumBoundingBox/blob/master/visual.png?raw=true)
 
 ### Example
 ```python
