@@ -119,5 +119,7 @@ def MinimumBoundingBox(points):
     min_rectangle['unit_vector_angle'] = atan2(min_rectangle['unit_vector'][1], min_rectangle['unit_vector'][0])
     min_rectangle['rectangle_center'] = to_xy_coordinates(min_rectangle['unit_vector_angle'], min_rectangle['rectangle_center'])
     min_rectangle['corner_points'] = set(rectangle_corners(min_rectangle))
+    min_rectangle['cardinal_angle_rad'] = smallest_angle_relative_to_cardinal_direction(min_rectangle['unit_vector_angle'], True)
+    min_rectangle['cardinal_angle_deg'] = np.rad2deg(min_rectangle['cardinal_angle_rad'])
 
     return min_rectangle
