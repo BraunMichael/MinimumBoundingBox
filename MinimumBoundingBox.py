@@ -76,17 +76,6 @@ def rectangle_corners(rectangle):
     return rotate_points(rectangle['rectangle_center'], rectangle['unit_vector_angle'], corner_points)
 
 
-BoundingBox = namedtuple('BoundingBox', ('area',
-                                         'length_parallel',
-                                         'length_orthogonal',
-                                         'rectangle_center',
-                                         'unit_vector',
-                                         'unit_vector_angle',
-                                         'corner_points'
-                                        )
-)
-
-
 # use this function to find the listed properties of the minimum bounding box of a point cloud
 def MinimumBoundingBox(points):
     # Requires: points to be a list or tuple of 2D points. ex: ((5, 2), (3, 4), (6, 8))
@@ -116,14 +105,6 @@ def MinimumBoundingBox(points):
 
     min_rectangle['unit_vector_angle'] = atan2(min_rectangle['unit_vector'][1], min_rectangle['unit_vector'][0])
     min_rectangle['rectangle_center'] = to_xy_coordinates(min_rectangle['unit_vector_angle'], min_rectangle['rectangle_center'])
+    min_rectangle['corner_points'] = set(rectangle_corners(min_rectangle))
 
-    # this is ugly but a quick hack and is being changed in the speedup branch
-    return BoundingBox(
-        area = min_rectangle['area'],
-        length_parallel = min_rectangle['length_parallel'],
-        length_orthogonal = min_rectangle['length_orthogonal'],
-        rectangle_center = min_rectangle['rectangle_center'],
-        unit_vector = min_rectangle['unit_vector'],
-        unit_vector_angle = min_rectangle['unit_vector_angle'],
-        corner_points = set(rectangle_corners(min_rectangle))
-    )
+    return min_rectangle
