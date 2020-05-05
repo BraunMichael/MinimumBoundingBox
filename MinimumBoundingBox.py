@@ -4,7 +4,6 @@ from scipy.spatial import ConvexHull
 from math import sqrt
 import numpy as np
 from math import atan2, cos, sin, pi
-from collections import namedtuple
 
 
 def smallest_angle_relative_to_cardinal_direction(unit_vector_angle, in_Rad=True):
@@ -93,7 +92,7 @@ def rectangle_corners(rectangle):
 def MinimumBoundingBox(points):
     # Requires: points to be a list or tuple of 2D points. ex: ((5, 2), (3, 4), (6, 8))
     #           needs to be more than 2 points
-    # Effects:  returns a namedtuple that contains:
+    # Effects:  returns a dictionary that contains:
     #               area: area of the rectangle
     #               length_parallel: length of the side that is parallel to unit_vector
     #               length_orthogonal: length of the side that is orthogonal to unit_vector
