@@ -6,6 +6,7 @@ import numpy as np
 from math import atan2, cos, sin, pi
 from collections import namedtuple
 
+
 def smallest_angle_relative_to_cardinal_direction(unit_vector_angle, in_Rad=True):
     # Calculates the smallest angle from the normal vector of any bounding box side to a cardinal direction (ie y, x, -y ,-x)
     if in_Rad:
