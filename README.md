@@ -1,7 +1,7 @@
 # MinimumBoundingBox
 Finds the minimum bounding box from a point cloud.  
 
-[![Build Status](https://travis-ci.org/BraunMichael/MinimumBoundingBox.svg?branch=master)](https://travis-ci.org/BraunMichael/MinimumBoundingBox)
+[![Build Status](https://travis-ci.com/BraunMichael/MinimumBoundingBox.svg?branch=master)](https://travis-ci.org/BraunMichael/MinimumBoundingBox)
 
 ![](https://github.com/BraunMichael/MinimumBoundingBox/blob/master/visual.png?raw=true)
 
