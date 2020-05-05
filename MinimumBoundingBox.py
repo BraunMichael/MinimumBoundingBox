@@ -8,7 +8,7 @@ from collections import namedtuple
 
 
 def unit_vector(pt0, pt1):
-    # returns an unit vector that points in the direction of pt0 to pt1
+    # returns a unit vector that points in the direction of pt0 to pt1
     dis_0_to_1 = sqrt((pt0[0] - pt1[0])**2 + (pt0[1] - pt1[1])**2)
     return (pt1[0] - pt0[0]) / dis_0_to_1, \
            (pt1[1] - pt0[1]) / dis_0_to_1
@@ -102,7 +102,8 @@ def MinimumBoundingBox(points):
         rectangle = bounding_area(i, hull_ordered)
         if rectangle['area'] < min_rectangle['area']:
             min_rectangle = rectangle
-
+            
+    # math.atan2 convention is atan2(y,x)
     min_rectangle['unit_vector_angle'] = atan2(min_rectangle['unit_vector'][1], min_rectangle['unit_vector'][0])
     min_rectangle['rectangle_center'] = to_xy_coordinates(min_rectangle['unit_vector_angle'], min_rectangle['rectangle_center'])
     min_rectangle['corner_points'] = set(rectangle_corners(min_rectangle))
