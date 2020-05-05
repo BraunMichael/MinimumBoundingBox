@@ -1,6 +1,5 @@
 # MinimumBoundingBox
 Finds the minimum bounding box from a point cloud.  
-✮✮✮✮✮✮✮✮✮✮✮✮ LIKE IT? STAR IT! ✮✮✮✮✮✮✮✮✮✮✮✮  
 
 [![Build Status](https://travis-ci.org/BebeSparkelSparkel/MinimumBoundingBox.svg?branch=master)](https://travis-ci.org/BebeSparkelSparkel/MinimumBoundingBox)
 
@@ -20,13 +19,13 @@ bounding_box.corner_points  # {(5, 4), (-1, -3), (-2.32, -1.87), (3.68, 5.13)}
 
 ### Install
 ```shell
-pip install git+git://github.com/BebeSparkelSparkel/MinimumBoundingBox.git@master
-pip3 install git+git://github.com/BebeSparkelSparkel/MinimumBoundingBox.git@master
-pip3.5 install git+git://github.com/BebeSparkelSparkel/MinimumBoundingBox.git@master
+pip install git+git://github.com/BraunMichael/MinimumBoundingBox.git@master
+pip3 install git+git://github.com/BraunMichael/MinimumBoundingBox.git@master
+pip3.5 install git+git://github.com/BraunMichael/MinimumBoundingBox.git@master
 ```
 
 **MinimumBoundingBox**(points)  
-Returns the properties of the bounding box
+Returns the properties of the bounding box in a dict
 * **area**: area of the rectangle  
 * length_parallel: length of the side that is parallel to unit_vector  
 * length_orthogonal: length of the side that is orthogonal to unit_vector  
@@ -36,17 +35,3 @@ Returns the properties of the bounding box
   * it's orthogonal vector can be found with the orthogonal_vector function
 * unit_vector_angle: angle of the unit vector  
 * **corner_points**: set that contains the corners of the rectangle
-```python
-namedtuple('BoundingBox', ('area',
-                           'length_parallel',
-                           'length_orthogonal',
-                           'rectangle_center',
-                           'unit_vector',
-                           'unit_vector_angle',
-                           'corner_points'
-                          )
-)
-```
-
-
-✮✮✮✮✮✮✮✮✮✮✮✮ LIKE IT? STAR IT! ✮✮✮✮✮✮✮✮✮✮✮✮
